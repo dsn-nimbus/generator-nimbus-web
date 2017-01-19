@@ -45,9 +45,20 @@ exports.MainGenerator = class MainGenerator {
 
     this.generator.prompt(prompts)
       .then((prop) => {
+        let _baseEndpoints = prop.baseEndpoints;
+
         this.generator.appName = prop.appName;
         this.generator.hostName = prop.hostName;
-        this.generator.baseEndpoints = prop.baseEndpoints;
+
+        if (!/^\//.test(_baseEndpoints)) {
+          _baseEndpoints = "/" + _baseEndpoints.slice(1)
+        }
+
+        if (!/\*$/.test(_baseEndpoints)) {
+          _baseEndpoints += "*"
+        }
+
+        this.generator.baseEndpoints = _baseEndpoints;
         this.generator.proxyTarget = prop.proxyTarget;
 
         done();
