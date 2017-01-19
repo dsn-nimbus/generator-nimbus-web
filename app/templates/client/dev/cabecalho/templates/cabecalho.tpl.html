@@ -37,7 +37,7 @@
 
             <hr class="hidden-xs col-xs-12 alt-hr-separador-info" />
 
-            <button type="button" 
+            <button type="button"
                     ng-click="cCtrl.redirecionaLogout(cCtrl.SISTEMA_ADMIN_URL_LOGOUT)"
                     class="btn btn-default pull-right hidden-xs">Sair</button>
 
@@ -63,7 +63,7 @@
                   <div id="produtos-cabecalho-container" class="alt-produtos-usuario-cabecalho-container">
                       <a class="col-xs-12 col-sm-6 col-lg-4 text-center alt-hand alt-produto-cabecalho"
                          ng-repeat="prod in cCtrl.produtos.habilitados track by $index"
-                         ng-href="{{prod.urlAutenticacao}}" 
+                         ng-href="{{prod.urlAutenticacao}}"
                          target="_blank">
                           <img class="alt-imagem-pequena" ng-src="{{prod.urlLogo}}" />
                           <p class="text-muted" ng-bind="prod.nome"></p>
@@ -73,7 +73,7 @@
           </div>
 
       </div>
-      
+
       <alt-rota-reload></alt-rota-reload>
     </div>
 
@@ -85,18 +85,18 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="/">Sistema - Admin</a>
+        <a class="navbar-brand" href="/"><%= appName %></a>
     </div>
-    
+
     <div class="collapse navbar-collapse" id="js-menu-cabecalho">
-        <ul class="nav navbar-nav" 
+        <ul class="nav navbar-nav"
             ng-controller="AltRotasController as arCtrl">
-            
+
               <li ng-repeat="rota in arCtrl.rotas" ng-class="{active: rota.active}">
-                  <a ng-href="{{::rota.url}}" 
+                  <a ng-href="{{::rota.url}}"
                     ng-bind="::rota.nome"></a>
               </li>
-              
+
         </ul>
     </div>
 
