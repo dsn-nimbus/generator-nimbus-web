@@ -16,22 +16,44 @@ exports.MainGenerator = class MainGenerator {
   prompts() {
     const done = this.generator.async();
 
-    let prompts = [{
-      type: 'input',
-      name: 'appName',
-      message: 'Qual o nome do sistema?',
-      default: 'alt.sistema.adminApp'
-    }];
+    let prompts = [
+      {
+        type: 'input',
+        name: 'appName',
+        message: 'Qual o nome do sistema?',
+        default: 'alt.sistema.adminApp'
+      },
+      {
+        type: 'input',
+        name: 'hostName',
+        message: 'Qual o nome do host?',
+        default: 'sistema-dev.alterdata.com.br'
+      },
+      {
+        type: 'input',
+        name: 'baseEndpoint',
+        message: 'Qual a base do endpoint?',
+        default: '/sistema-rest-api/*'
+      },
+      {
+        type: 'input',
+        name: 'proxyTarget',
+        message: 'Qual o servidor que responderá pela API? Lembre-se de informar a porta também.',
+        default: 'http://sistema-dev.alterdata.com.br:1234'
+      },
+    ];
 
     this.generator.prompt(prompts)
       .then((prop) => {
         this.generator.appName = prop.appName;
+        this.generator.hostName = prop.hostName;
+        this.generator.baseEndpoint = prop.baseEndpoint;
+        this.generator.proxyTarget = prop.proxyTarget;
         done();
       });
   }
 
   copies() {
-    this.generator.template('_.alivrc', '.alivrc');
     this.generator.template('_.babelrc', '.babelrc');
     this.generator.template('_.bowerrc', '.bowerrc');
     this.generator.template('_.jazzignore', '.jazzignore');
@@ -55,6 +77,10 @@ exports.MainGenerator = class MainGenerator {
     this.generator.template('_protractor.conf.js', 'protractor.conf.js');
 
     pathsWithOptions(this.generator, [
+      {
+        in: '_.alivrc',
+        out: '.alivrc',
+      },
       {
         in: 'client/dev/index.html',
         out: 'client/dev/index.html',
@@ -268,7 +294,10 @@ exports.MainGenerator = class MainGenerator {
         out: 'tests/client/root/controllers/root_controller_test.js',
       }
     ], {
-      appName: this.generator.appName
+      appName: this.generator.appName,
+      hostName: this.generator.hostName,
+      baseEndpoint: this.generator.baseEndpoint,
+      proxyTarget: this.generator.proxyTarget,
     })
 
     this.generator.directory('tasks', 'tasks');

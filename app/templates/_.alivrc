@@ -1,13 +1,13 @@
 {
     "quiet": true,
     "port": 3000,
-    "host": "sistema-admin-dev.alterdata.com.br",
+    "host": "<%= hostName %>",
     "secure": true,
     "pathIndex": "client/dev",
     "only": [
         "client/dev/**/*"
     ],
     "proxy": true,
-    "proxyWhen": "/sistema-rest-api/*",
-    "proxyTarget": "http://sistema-admin-dev.alterdata.com.br:1234"     
+    "proxyWhen": "<%= baseEndpoint %>*",
+    "proxyTarget": "<%= proxyTarget %>"
 }

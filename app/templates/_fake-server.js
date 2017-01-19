@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 
 app.post('/api/alguma-coisa', (req, res) => {
-    res.end();
+  res.end();
 });
 
 app.get('/api/outra-coisa', (req, res) => {
-    res.json({
+  res.json({
 		yo: true
 	});
 });
