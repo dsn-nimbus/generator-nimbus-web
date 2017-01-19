@@ -58,6 +58,10 @@ exports.MainGenerator = class MainGenerator {
           _baseEndpoints = _baseEndpoints.substring(_baseEndpoints.indexOf("*"), 0)
         }
 
+        if (!/\/$/.test(_baseEndpoints)) {
+          _baseEndpoints += "/"
+        }
+
         this.generator.baseEndpoints = _baseEndpoints;
         this.generator.proxyTarget = prop.proxyTarget;
 
