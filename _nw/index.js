@@ -51,7 +51,7 @@ exports.MainGenerator = class MainGenerator {
         this.generator.hostName = prop.hostName;
 
         if (!/^\//.test(_baseEndpoints)) {
-          _baseEndpoints = "/" + _baseEndpoints.slice(1)
+          _baseEndpoints = "/" + _baseEndpoints
         }
 
         if (/\*$/.test(_baseEndpoints)) {
