@@ -13,7 +13,10 @@ describe('acceptance -> main', () => {
         skipInstall: true
       })
       .withPrompts({
-        appName: 'xyz.123'
+        appName: 'xyz.123',
+        hostName: 'xyz.com.br',
+        baseEndpoints: 'c*',
+        proxyTarget: 'http://xyz.com.br:1234'
       })
       .on('end', done);
   });
