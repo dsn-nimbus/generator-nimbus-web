@@ -317,7 +317,7 @@
         }])
         .factory('altSistemaSetaAutenticacao', ['$http', function($http) {
             return function() {
-                return $http.post('/sistema-rest-api/auth');
+                return $http.post('<%= baseEndpoints %>auth');
             };
         }])
         .controller('SistemaAuth', ['$window', 'UsuarioInfo', 'altSistemaSetaAutenticacao', 'redirecionaPaginaUsuarioLogado', function($window, UsuarioInfo, altSistemaSetaAutenticacao, redirecionaPaginaUsuarioLogado) {

@@ -8,6 +8,6 @@
         "client/dev/**/*"
     ],
     "proxy": true,
-    "proxyWhen": "<%= baseEndpoints %>",
+    "proxyWhen": "<%= baseEndpoints %>*",
     "proxyTarget": "<%= proxyTarget %>"
 }

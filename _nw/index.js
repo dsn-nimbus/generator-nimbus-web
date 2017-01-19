@@ -33,7 +33,7 @@ exports.MainGenerator = class MainGenerator {
         type: 'input',
         name: 'baseEndpoints',
         message: 'Qual a base do endpoint?',
-        default: '/sistema-rest-api/*'
+        default: '/sistema-rest-api/'
       },
       {
         type: 'input',
@@ -54,8 +54,8 @@ exports.MainGenerator = class MainGenerator {
           _baseEndpoints = "/" + _baseEndpoints.slice(1)
         }
 
-        if (!/\*$/.test(_baseEndpoints)) {
-          _baseEndpoints += "*"
+        if (/\*$/.test(_baseEndpoints)) {
+          _baseEndpoints = _baseEndpoints.substring(_baseEndpoints.indexOf("*"), 0)
         }
 
         this.generator.baseEndpoints = _baseEndpoints;
