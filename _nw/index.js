@@ -20,25 +20,25 @@ exports.MainGenerator = class MainGenerator {
       {
         type: 'input',
         name: 'appName',
-        message: 'Qual o nome do sistema?',
+        message: 'Qual o nome da aplicação?',
         default: 'alt.sistema.adminApp'
       },
       {
         type: 'input',
         name: 'hostName',
-        message: 'Qual o nome do host?',
+        message: 'Qual o host?',
         default: 'sistema-dev.alterdata.com.br'
       },
       {
         type: 'input',
-        name: 'baseEndpoint',
+        name: 'baseEndpoints',
         message: 'Qual a base do endpoint?',
         default: '/sistema-rest-api/*'
       },
       {
         type: 'input',
         name: 'proxyTarget',
-        message: 'Qual o servidor que responderá pela API? Lembre-se de informar a porta também.',
+        message: 'Qual o host e porta do servidor da API?',
         default: 'http://sistema-dev.alterdata.com.br:1234'
       },
     ];
@@ -47,8 +47,9 @@ exports.MainGenerator = class MainGenerator {
       .then((prop) => {
         this.generator.appName = prop.appName;
         this.generator.hostName = prop.hostName;
-        this.generator.baseEndpoint = prop.baseEndpoint;
+        this.generator.baseEndpoints = prop.baseEndpoints;
         this.generator.proxyTarget = prop.proxyTarget;
+
         done();
       });
   }
@@ -296,7 +297,7 @@ exports.MainGenerator = class MainGenerator {
     ], {
       appName: this.generator.appName,
       hostName: this.generator.hostName,
-      baseEndpoint: this.generator.baseEndpoint,
+      baseEndpoints: this.generator.baseEndpoints,
       proxyTarget: this.generator.proxyTarget,
     })
 
