@@ -2,7 +2,7 @@
     "quiet": true,
     "port": 3000,
     "host": "<%= hostName %>",
-    "secure": true,
+    "http2": true,
     "pathIndex": "client/dev",
     "only": [
         "client/dev/**/*"
