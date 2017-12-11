@@ -186,10 +186,6 @@ exports.MainGenerator = class MainGenerator {
         out: 'client/dev/comum/styles/alt-card.css',
       },
       {
-        in: 'client/dev/comum/styles/alt-carregando-info.css',
-        out: 'client/dev/comum/styles/alt-carregando-info.css',
-      },
-      {
         in: 'client/dev/comum/styles/alt-data.css',
         out: 'client/dev/comum/styles/alt-data.css',
       },
