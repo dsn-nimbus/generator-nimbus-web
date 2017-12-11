@@ -60,7 +60,6 @@ describe('acceptance -> main', () => {
       'client/dev/comum/styles/alt-busca.css',
       'client/dev/comum/styles/alt-cabecalho.css',
       'client/dev/comum/styles/alt-card.css',
-      'client/dev/comum/styles/alt-carregando-info.css',
       'client/dev/comum/styles/alt-data.css',
       'client/dev/comum/styles/alt-fonts.css',
       'client/dev/comum/styles/alt-ie.css',
