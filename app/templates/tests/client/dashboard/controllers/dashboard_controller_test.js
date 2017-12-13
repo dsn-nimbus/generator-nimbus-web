@@ -1,5 +1,3 @@
-'use strict';
-
 describe('dashboard -> DashboardController', function() {
     var _rootScope, _q, _moment, _scope, _httpBackend, _Evento, _DashboardService, _AltAlertaFlutuanteService, _AltCarregandoInfoService,
         _AltSelectService, _AltPassaporteUsuarioLogadoManager;
@@ -39,12 +37,12 @@ describe('dashboard -> DashboardController', function() {
             $controller(NOME_CONTROLLER, {$scope: _scope});
 
             expect(_scope.ctrl.oi).toEqual('oi :D');
-        }))       
+        }))
     });
-    
+
     describe('onLoad', function() {
         it('deve ...', function() {
-            
+
         })
-    }) 
+    })
 });

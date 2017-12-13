@@ -1,5 +1,3 @@
-'use strict';
-
 describe('dashboard -> DashboardService', function() {
   var _rootScope, _scope, _httpBackend, _DashboardService;
   var URL_OBTER_INFO = '/sistema-rest-api/endpoint-qualquer';
@@ -13,7 +11,7 @@ describe('dashboard -> DashboardService', function() {
 
     _DashboardService = $injector.get('DashboardService');
   }))
-  
+
   describe('criação', function() {
     it('deve retornar um objeto', function() {
       expect(typeof _DashboardService).toBe('object');
@@ -34,7 +32,7 @@ describe('dashboard -> DashboardService', function() {
 
       _httpBackend.flush();
     });
-    
+
     it('deve buscar a info corretamente', function() {
       var _resposta = [
         {
@@ -54,6 +52,6 @@ describe('dashboard -> DashboardService', function() {
 
       _httpBackend.flush();
     });
-  }); 
-  
+  });
+
 });
