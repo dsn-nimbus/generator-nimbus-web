@@ -2,7 +2,7 @@
     "use strict";
     
     ng.module('<%= appName %>')
-      .provider('sistemaAdminAcessos', [function() {
+      .provider('<%= appName %>Acessos', [function() {
           this.acessos = {
               FAZER_ALGO: "999999"
           };
